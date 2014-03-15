@@ -1,16 +1,35 @@
+
 %h1 Listing requests
 
-%table
+%table.table.table-bordered.table-striped.table-hover
   %tr
-    %th
-    %th
-    %th
+    %th First Name
+    %th Last Name
+    %th DOB
+    %th MRN
+    %th sex
+    %th Clinical details
+    %th ECG Changes
+    %th Ward
+    %th Consultant
+    %th Echo Type
 
   - @requests.each do |request|
+   
     %tr
       %td= request.patient.first_name
       %td= request.patient.last_name
+      %td= request.patient.dob
+      %td= request.patient.mrn
+      %td= request.patient.sex
       %td= request.echoform.clinical_details
+      %td= request.echoform.ecg_changes
+      %td= request.echoform.ward
+      %td= request.echoform.consultant
+      %td= request.echoform.echo_type
+      
+
+  
       %td= link_to 'Show', request
       %td= link_to 'Edit', edit_request_path(request)
       %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' } 

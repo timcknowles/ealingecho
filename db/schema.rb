@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140315130244) do
+ActiveRecord::Schema.define(:version => 20140315150805) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20140315130244) do
     t.integer  "patient_id"
     t.integer  "echoform_id"
     t.datetime "request_date"
+    t.integer  "priority"
+    t.boolean  "approved"
   end
 
   create_table "users", :force => true do |t|
