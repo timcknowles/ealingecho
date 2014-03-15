@@ -1,0 +1,22 @@
+%h1 Listing assignments
+
+%table
+  %tr
+    %th User
+    %th Request
+    %th
+    %th
+    %th
+
+  - @assignments.each do |assignment|
+    %tr
+      %td= assignment.user.email
+      %td= assignment.request_id
+      %td= assignment.request.patient.first_name
+      %td= link_to 'Show', assignment
+      %td= link_to 'Edit', edit_assignment_path(assignment)
+      %td= link_to 'Destroy', assignment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Assignment', new_assignment_path

@@ -1,0 +1,9 @@
+= simple_form_for(@assignment) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user, :label_method => :email
+    = f.association :request, :label_method => :patient_id
+
+  .form-actions
+    = f.button :submit

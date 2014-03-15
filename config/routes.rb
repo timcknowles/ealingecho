@@ -1,4 +1,7 @@
 Ealingecho::Application.routes.draw do
+  resources :assignments
+
+
   resources :echoforms
 
 
