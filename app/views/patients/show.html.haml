@@ -1,6 +1,10 @@
 %p#notice= notice
 
 
+- @patient.requests.each do |request|
+  %td= request.echoform.clinical_details
+
+
 = link_to 'Edit', edit_patient_path(@patient)
 \|
 = link_to 'Back', patients_path

@@ -25,6 +25,8 @@ class PatientsController < ApplicationController
   # GET /patients/new.json
   def new
     @patient = Patient.new
+    @patient.echoforms.build
+
 
     respond_to do |format|
       format.html # new.html.erb

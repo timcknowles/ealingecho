@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  clinical_details: MyString
+  ecg_changes: MyString
+  echo_type: MyString
+  ward: MyString
+  doctor: MyString
+  consultant: MyString
+
+two:
+  clinical_details: MyString
+  ecg_changes: MyString
+  echo_type: MyString
+  ward: MyString
+  doctor: MyString
+  consultant: MyString

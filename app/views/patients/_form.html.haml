@@ -1,7 +1,15 @@
-= simple_form_for(@patient) do |f|
+= simple_form_for (@patient) do |f|
   = f.error_notification
 
   .form-inputs
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :dob
+    = f.input :mrn
+    = f.input :sex
+
+    = f.simple_fields_for :echoforms do |p|
+      = p.input :clinical_details
 
   .form-actions
     = f.button :submit

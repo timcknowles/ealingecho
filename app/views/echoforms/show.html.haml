@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Clinical details:
+  = @echoform.clinical_details
+%p
+  %b Ecg changes:
+  = @echoform.ecg_changes
+%p
+  %b Echo type:
+  = @echoform.echo_type
+%p
+  %b Ward:
+  = @echoform.ward
+%p
+  %b Doctor:
+  = @echoform.doctor
+%p
+  %b Consultant:
+  = @echoform.consultant
+
+= link_to 'Edit', edit_echoform_path(@echoform)
+\|
+= link_to 'Back', echoforms_path

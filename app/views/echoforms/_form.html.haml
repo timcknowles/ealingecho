@@ -1,0 +1,15 @@
+= simple_form_for(@echoform) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :clinical_details
+    = f.input :ecg_changes
+    = f.input :echo_type
+    = f.input :ward
+    = f.input :doctor
+    = f.input :consultant
+
+    = f.association :patients, :label_method => :last_name
+
+  .form-actions
+    = f.button :submit

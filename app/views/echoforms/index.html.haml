@@ -1,0 +1,30 @@
+%h1 Listing echoforms
+
+%table
+  %tr
+    %th Clinical details
+    %th Ecg changes
+    %th Echo type
+    %th Ward
+    %th Doctor
+    %th Consultant
+    %th
+    %th
+    %th
+
+  - @echoforms.each do |echoform|
+    %tr
+      
+      %td= echoform.clinical_details
+      %td= echoform.ecg_changes
+      %td= echoform.echo_type
+      %td= echoform.ward
+      %td= echoform.doctor
+      %td= echoform.consultant
+      %td= link_to 'Show', echoform
+      %td= link_to 'Edit', edit_echoform_path(echoform)
+      %td= link_to 'Destroy', echoform, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Echoform', new_echoform_path

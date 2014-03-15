@@ -2,15 +2,27 @@
 
 %table
   %tr
-    %th
-    %th
-    %th
+    %th first name
+    %th last name
+    %th DOB
+    %th MRN
+    %th SEX
+    %th Show
+    %th Edit
+    %th Delete
+
 
   - @patients.each do |patient|
     %tr
+      %td= patient.first_name
+      %td= patient.last_name
+      %td= patient.dob
+      %td= patient.mrn
+      %td= patient.sex
       %td= link_to 'Show', patient
       %td= link_to 'Edit', edit_patient_path(patient)
       %td= link_to 'Destroy', patient, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      
 
 %br
 
