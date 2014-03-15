@@ -13,8 +13,8 @@
       %td= request.echoform.clinical_details
       %td= link_to 'Show', request
       %td= link_to 'Edit', edit_request_path(request)
-      %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+      %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' } 
+      %td= link_to 'assign', assignments_path(request_id: request.id), method: :post, :class => 'btn btn-mini btn-primary'
 %br
 
 = link_to 'New Request', new_request_path
