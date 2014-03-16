@@ -1,5 +1,5 @@
 class Request < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :priority, :approved
 
   belongs_to :echoform
   belongs_to :patient

@@ -60,11 +60,13 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.update_attributes(params[:request])
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
-        format.json { head :no_content }
+        #format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+        #format.json { head :no_content }
+        format.json { respond_with_bip(@request) }
       else
         format.html { render action: "edit" }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
+        #format.json { render json: @request.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@request) }
       end
     end
   end
