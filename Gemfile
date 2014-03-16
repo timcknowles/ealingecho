@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.15'
 
 gem 'haml-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'simple_form'
 gem 'devise'
 gem "best_in_place"
