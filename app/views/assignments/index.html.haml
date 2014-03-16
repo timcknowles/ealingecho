@@ -1,18 +1,22 @@
 %h1 Listing assignments
 
-%table
+%table.table.table-bordered.table-striped.table-hover
   %tr
-    %th User
-    %th Request
-    %th
-    %th
-    %th
+    %th Ultrasonographer
+    %th First Name
+    %th Last Name
+    %th DOB
+    %th MRN
 
   - @assignments.each do |assignment|
     %tr
-      %td= assignment.user.email
-      %td= assignment.request_id
+      /
+      %td= best_in_place assignment, :user_id, :type => :select, :collection => User::list_users
+      /%td= assignment.request_id
       %td= assignment.request.patient.first_name
+      %td= assignment.request.patient.last_name
+      %td= assignment.request.patient.dob
+      %td= assignment.request.patient.mrn
       %td= link_to 'Show', assignment
       %td= link_to 'Edit', edit_assignment_path(assignment)
       %td= link_to 'Destroy', assignment, :method => :delete, :data => { :confirm => 'Are you sure?' }

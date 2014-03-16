@@ -30,6 +30,8 @@
       %td= request.echoform.consultant
       %td= request.echoform.echo_type
       
+
+      
       /%td= request.approved
       %td= best_in_place request, :approved, :type => :checkbox, :collection => ["Yes", "No"]
       %td= best_in_place request, :priority, :type => :select, :collection => [[1, "1"], [2, "1"], [3, "3"], [4, "4"]] 

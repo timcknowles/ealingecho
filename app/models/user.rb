@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
 
   has_many :assignments
   has_many :requests, through: :assignments
+  def self.list_users 
+    User.select("id, email").map {|x| [x.id, x.email] }
+  end
+
 end
