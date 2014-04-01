@@ -16,5 +16,4 @@
 //= require bootstrap
 //= require_tree .
 
-jQuery ->
-  $('.best_in_place').best_in_place()
+
