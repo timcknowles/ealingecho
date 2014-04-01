@@ -12,7 +12,7 @@ Ealingecho::Application.routes.draw do
 
   resources :patients
 
-  root :to => "home#index"
+  root :to => "requests#index"
 
 
   # The priority is based upon order of creation:
