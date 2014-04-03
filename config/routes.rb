@@ -9,6 +9,7 @@ Ealingecho::Application.routes.draw do
 
 
   devise_for :users
+  devise_for :requests
 
   resources :patients
 

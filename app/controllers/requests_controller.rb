@@ -1,7 +1,9 @@
+
+
 class RequestsController < ApplicationController
-  
   # GET /requests
   # GET /requests.json
+ before_filter :authenticate_user!
   def index
     @requests = Request.all
 
