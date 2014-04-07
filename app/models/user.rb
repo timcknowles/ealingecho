@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role_id
   # attr_accessible :title, :body
+  validates_format_of :email, :with => /\A([^@\s]+)@(nhs\.net)\z/, :message => "not a valid nhs.net email"
 
   has_many :assignments
   has_many :requests, through: :assignments

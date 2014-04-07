@@ -2,14 +2,19 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :dob
-    = f.input :mrn
-    = f.input :sex
+    = f.input :first_name, label: "First Name"
+    = f.input :last_name, label: "Last Name" 
+    = f.input :dob,  label: "DOB"
+    = f.input :mrn,  label: "MRN", hint: 'Please enter the hospital number starting with E'
+    = f.input :sex,  label: "SEX"
 
     = f.simple_fields_for :echoforms do |p|
+      
       = p.input :clinical_details
-
+      = p.input :consultant
+      = p.input :doctor
+      = p.input :ecg_changes
+      = p.input :echo_type, as: :check_boxes, collection: ["ventricular function", "regional wall motion", "valve function", "suspected endocarditis", "suspected /confirmed PE"]
+      = p.input :ward, collection: ["4S", "5S", "5N", "6N", "7S", "7N", "8S", "8N", "9S", "9N"], prompt: "Select ward"
   .form-actions
     = f.button :submit
